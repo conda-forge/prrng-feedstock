@@ -2,7 +2,7 @@
 {% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
@@ -50,9 +50,8 @@ outputs:
         - ninja
       host:
         - python
-        - setuptools
-        - setuptools_scm
         - pip
+        - setuptools_scm
         - pyxtensor
       run:
         - python
