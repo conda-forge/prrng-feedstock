@@ -1,16 +1,16 @@
 {% set name = "prrng" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
   url: https://github.com/tdegeus/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 37b13e69024e74135ca7c760fe2d47ea8bec1ea903f832e5bf003c3865bc1fa2
+  sha256: fbbf8894c24fdf3c6b7caf2763168f5607253a3efb368e844f91ec8a1c20f52e
 
 build:
-  number: 1
+  number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
 outputs:
@@ -46,11 +46,12 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - cmake
+        - ninja
       host:
         - python
-        - setuptools
-        - setuptools_scm
         - pip
+        - setuptools_scm
         - pyxtensor
       run:
         - python
