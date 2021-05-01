@@ -46,6 +46,8 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - cmake
+        - ninja
       host:
         - python
         - setuptools
