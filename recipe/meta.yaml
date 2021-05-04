@@ -1,5 +1,5 @@
 {% set name = "prrng" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tdegeus/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fbbf8894c24fdf3c6b7caf2763168f5607253a3efb368e844f91ec8a1c20f52e
+  sha256: 6959eeafda813d1af8c5964c558dda1ea1a5dfd766e41d3a31bc07187bd4b9fd
 
 build:
   number: 0
