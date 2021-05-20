@@ -9,3 +9,6 @@ cmake \
   ..
 
 make -j${CPU_COUNT} install
+
+cd ..
+rm -r build
