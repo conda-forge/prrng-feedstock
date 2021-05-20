@@ -52,7 +52,9 @@ outputs:
         - python
         - pip
         - setuptools_scm
-        - pyxtensor
+        - xtensor
+        - xtensor-python
+        - boost
       run:
         - python
 
