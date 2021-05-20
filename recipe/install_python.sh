@@ -2,22 +2,22 @@ if [ -d build ]; then
   rm -r build
 fi
 
-mkdir build
-cd build
+# mkdir build
+# cd build
 
-cmake \
-  -DCMAKE_PREFIX_PATH:PATH=${PREFIX} \
-  -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-  -DCMAKE_INSTALL_LIBDIR=lib \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DPYTHON_EXECUTABLE="$PYTHON" \
-  -DBUILD_PYTHON=1 \
-  ..
+# cmake \
+#   -DCMAKE_PREFIX_PATH:PATH=${PREFIX} \
+#   -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+#   -DCMAKE_INSTALL_LIBDIR=lib \
+#   -DCMAKE_BUILD_TYPE=Release \
+#   -DPYTHON_EXECUTABLE="$PYTHON" \
+#   -DBUILD_PYTHON=1 \
+#   ..
 
-make
+# make
 
-cd ..
-rm -r build
+# cd ..
+# rm -r build
 
 # ----
 
