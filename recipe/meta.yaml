@@ -54,7 +54,7 @@ outputs:
         - setuptools_scm
         - xtensor
         - xtensor-python
-        - boost
+        - boost-cpp
       run:
         - python
 
