@@ -1,4 +1,6 @@
 python -c "import numpy"
+echo `which python`
+echo "$PYTHON"
 
 mkdir build
 cd build
@@ -9,8 +11,7 @@ cmake \
   -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DCMAKE_BUILD_TYPE=Release \
-  -DPYTHON_EXECUTABLE="$PYTHON" \
-  -DPython3_EXECUTABLE="$PYTHON" \
+  -DPython_EXECUTABLE="$PYTHON" \
   -DBUILD_PYTHON=1 \
   ..
 
