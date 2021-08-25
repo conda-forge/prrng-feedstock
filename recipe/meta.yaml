@@ -13,6 +13,7 @@ source:
 build:
   number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  skip: True  # [python_impl == 'pypy']
 
 outputs:
 
@@ -42,9 +43,6 @@ outputs:
 
     script: install_python.sh  # [unix]
     script: install_python.bat  # [win]
-
-    build:
-      skip: True  # [python_impl == 'pypy']
 
     requirements:
       build:
