@@ -22,7 +22,9 @@ python:
 - 3.6.* *_cpython
 - 3.7.* *_cpython
 - 3.8.* *_cpython
+- 3.9.* *_cpython
 python_impl:
+- cpython
 - cpython
 - cpython
 - cpython
