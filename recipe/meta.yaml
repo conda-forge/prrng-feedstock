@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "prrng" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,11 +8,12 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 7291ed7619270f9f251ac6c6d7752233756bbd52629efa046223aae58f76bde3
+  sha256: ef3237a7c009fd0ef8e51683e3aa0e5363482b4c79b8dd482d538109cde75c47
 
 build:
   number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  skip: True  # [python_impl == 'pypy']
 
 outputs:
 
@@ -47,40 +48,43 @@ outputs:
       build:
         - python                              # [build_platform != target_platform]
         - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-        - numpy                               # [build_platform != target_platform]
+        - numpy *                             # [build_platform != target_platform]
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
         - cmake
         - ninja
       host:
         - boost-cpp
-        - numpy
+        - numpy *
         - pip
         - pybind11
         - python
+        - scikit-build
         - setuptools_scm
         - xtensor
         - xtensor-python
       run:
         - python
+        - numpy *
 
     test:
       imports:
         - {{ name }}
       commands:
         - pip check
+        - python -c "import {{ name }}; {{ name }}.version()"
       requires:
         - pip
 
 about:
-  home: https://github.com/tdegeus/{{ name }}
+  home: https://github.com/{{ org }}/{{ name }}
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Portable Reconstructible (Pseudo) Random Number Generator.
   description: Portable Reconstructible (Pseudo) Random Number Generator.
-  doc_url: https://tdegeus.github.io/{{ name }}
-  dev_url: https://github.com/tdegeus/{{ name }}
+  doc_url: https://{{ org }}.github.io/{{ name }}
+  dev_url: https://github.com/{{ org }}/{{ name }}
 
 extra:
   recipe-maintainers:
