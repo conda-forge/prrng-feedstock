@@ -53,6 +53,7 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
+        - make  # [unix]
       host:
         - boost-cpp
         - numpy *
