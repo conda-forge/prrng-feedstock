@@ -40,24 +40,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python_implpypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12544&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/prrng-feedstock?branchName=master&jobName=linux&configuration=linux_64_python_implpypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python_implcpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12544&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/prrng-feedstock?branchName=master&jobName=osx&configuration=osx_64_python_implcpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python_implpypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12544&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/prrng-feedstock?branchName=master&jobName=osx&configuration=osx_64_python_implpypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
