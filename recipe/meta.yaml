@@ -52,8 +52,8 @@ outputs:
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
         - cmake
-        - ninja
         - make  # [unix]
+        - ninja
       host:
         - boost-cpp
         - numpy *
