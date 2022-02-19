@@ -65,15 +65,15 @@ outputs:
         - xtensor
         - xtensor-python
       run:
-        - python
         - numpy *
+        - python
 
     test:
       imports:
         - {{ name }}
       commands:
         - pip check
-        - python -c "import {{ name }}; {{ name }}.version()"
+        - python -c "import {{ name }}; assert {{ name }}.version() == '{{ version }}'"
       requires:
         - pip
 
