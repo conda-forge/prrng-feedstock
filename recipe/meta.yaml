@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "prrng" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e5c1d2385daa980f529cb6e722ef6f5cebb1d7c748f991c1302db9e7e3140ed8
+  sha256: f26f0824c230c6ee189fbbe33ffab8eb005d97fb147b9b0a4cfc6a6bfc93cc12
 
 build:
   number: 0
@@ -29,8 +29,10 @@ outputs:
         - cmake
         - make  # [unix]
       host:
+        - boost-cpp
         - xtensor
       run:
+        - boost-cpp
         - xtensor
 
     test:
