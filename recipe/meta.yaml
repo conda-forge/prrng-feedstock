@@ -9,7 +9,7 @@ source:
   sha256: 638788b382af6de5779fe7605039731c23c85e551b3fb15c941dd231b0e5762f
 
 build:
-  number: 1
+  number: 2
 
 outputs:
 
@@ -27,10 +27,9 @@ outputs:
         - cmake
         - make  # [unix]
       host:
-        - boost-cpp
+        - libboost-devel
         - xtensor
       run:
-        - boost-cpp
         - xtensor
 
     test:
@@ -60,7 +59,7 @@ outputs:
         - make  # [unix]
         - ninja
       host:
-        - boost-cpp
+        - libboost-headers
         - numpy *
         - pip
         - pybind11
