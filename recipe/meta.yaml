@@ -27,7 +27,7 @@ outputs:
         - cmake
         - make  # [unix]
       host:
-        - libboost-devel
+        - libboost-headers
         - xtensor
       run:
         - xtensor
