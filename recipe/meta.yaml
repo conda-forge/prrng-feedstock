@@ -1,13 +1,11 @@
-{% set org = "tdegeus" %}
-{% set name = "prrng" %}
 {% set version = "1.12.0" %}
 
 package:
-  name: {{ name|lower }}-split
+  name: prrng-split
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/tdegeus/prrng/archive/v{{ version }}.tar.gz
   sha256: 638788b382af6de5779fe7605039731c23c85e551b3fb15c941dd231b0e5762f
 
 build:
@@ -15,7 +13,7 @@ build:
 
 outputs:
 
-  - name: {{ name|lower }}
+  - name: prrng
 
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -37,12 +35,12 @@ outputs:
 
     test:
       commands:
-        - test -f ${PREFIX}/include/{{ name }}.h  # [unix]
-        - test -f ${PREFIX}/lib/cmake/{{ name }}/{{ name }}Config.cmake  # [unix]
-        - if exist %LIBRARY_PREFIX%\include\{{ name }}.h (exit 0) else (exit 1)  # [win]
-        - if exist %LIBRARY_PREFIX%\lib\cmake\{{ name }}Config.cmake (exit 0) else (exit 1)  # [win]
+        - test -f ${PREFIX}/include/prrng.h                                 # [unix]
+        - test -f ${PREFIX}/lib/cmake/prrng/prrngConfig.cmake               # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\prrng.h exit 1              # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\prrngConfig.cmake exit 1  # [win]
 
-  - name: python-{{ name|lower }}
+  - name: python-prrng
 
     script: install_python.sh  # [unix]
     script: install_python.bat  # [win]
@@ -78,22 +76,22 @@ outputs:
 
     test:
       imports:
-        - {{ name }}
+        - prrng
       commands:
         - pip check
-        - python -c "import {{ name }}; assert {{ name }}.version() == '{{ version }}'"
+        - python -c "import prrng; assert prrng.version() == '{{ version }}'"
       requires:
         - pip
 
 about:
-  home: https://github.com/{{ org }}/{{ name }}
+  home: https://github.com/tdegeus/prrng
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Portable Reconstructible (Pseudo) Random Number Generator.
   description: Portable Reconstructible (Pseudo) Random Number Generator.
-  doc_url: https://{{ org }}.github.io/{{ name }}
-  dev_url: https://github.com/{{ org }}/{{ name }}
+  doc_url: https://tdegeus.github.io/prrng
+  dev_url: https://github.com/tdegeus/prrng
 
 extra:
   recipe-maintainers:
