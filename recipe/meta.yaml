@@ -34,10 +34,10 @@ outputs:
 
     test:
       commands:
-        - test -f ${PREFIX}/include/prrng.h                                 # [unix]
-        - test -f ${PREFIX}/lib/cmake/prrng/prrngConfig.cmake               # [unix]
-        - if not exist %LIBRARY_PREFIX%\include\prrng.h exit 1              # [win]
-        - if not exist %LIBRARY_PREFIX%\lib\cmake\prrngConfig.cmake exit 1  # [win]
+        - test -f ${PREFIX}/include/prrng.h                                       # [unix]
+        - test -f ${PREFIX}/lib/cmake/prrng/prrngConfig.cmake                     # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\prrng.h exit 1                    # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\prrng\prrngConfig.cmake exit 1  # [win]
 
   - name: python-prrng
 
