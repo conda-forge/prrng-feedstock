@@ -1,4 +1,4 @@
-{% set version = "1.12.0" %}
+{% set version = "1.12.1" %}
 
 package:
   name: prrng-split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/tdegeus/prrng/archive/v{{ version }}.tar.gz
-  sha256: 638788b382af6de5779fe7605039731c23c85e551b3fb15c941dd231b0e5762f
+  sha256: e84569f03e38f727d28b69da68e828c050b288dda9e9bc0dc939ee5f4abf2b4c
 
 build:
-  number: 3
+  number: 0
 
 outputs:
 
