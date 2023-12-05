@@ -20,8 +20,6 @@ outputs:
 
     build:
       script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-      ignore_run_exports_from:
-        - libboost-devel
 
     requirements:
       build:
@@ -29,7 +27,7 @@ outputs:
         - cmake
         - make  # [unix]
       host:
-        - libboost-devel  # to include CMake, the library only uses header-only Boost
+        - libboost-headers
         - xtensor
       run:
         - libboost-devel  # to include CMake, the library only uses header-only Boost
