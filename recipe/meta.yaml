@@ -9,7 +9,7 @@ source:
   sha256: e84569f03e38f727d28b69da68e828c050b288dda9e9bc0dc939ee5f4abf2b4c
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -20,6 +20,8 @@ outputs:
 
     build:
       script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+      ignore_run_exports_from:
+        - libboost-devel
 
     requirements:
       build:
@@ -27,10 +29,10 @@ outputs:
         - cmake
         - make  # [unix]
       host:
-        - libboost-headers
+        - libboost-devel  # to include CMake
         - xtensor
       run:
-        - libboost-headers
+        - libboost-devel  # to include CMake
         - xtensor
 
     test:
