@@ -9,7 +9,7 @@ source:
   sha256: e84569f03e38f727d28b69da68e828c050b288dda9e9bc0dc939ee5f4abf2b4c
 
 build:
-  number: 0
+  number: 1
 
 outputs:
 
@@ -30,7 +30,7 @@ outputs:
         - libboost-headers
         - xtensor
       run:
-        - libboost-headers
+        - libboost-devel  # to include CMake, the library only uses header-only Boost
         - xtensor
 
     test:
