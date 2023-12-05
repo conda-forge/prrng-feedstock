@@ -29,10 +29,10 @@ outputs:
         - cmake
         - make  # [unix]
       host:
-        - libboost-devel  # to include CMake
+        - libboost-devel  # to include CMake, the library only uses header-only Boost
         - xtensor
       run:
-        - libboost-devel  # to include CMake
+        - libboost-devel  # to include CMake, the library only uses header-only Boost
         - xtensor
 
     test:
