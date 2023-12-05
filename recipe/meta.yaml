@@ -20,7 +20,7 @@ outputs:
 
     build:
       script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-      ignore_run_exports:
+      ignore_run_exports_from:
         - libboost-devel
 
     requirements:
